@@ -37,8 +37,6 @@ export async function defineComponent(componentName, htmlUrl, componentFn) {
         });
       });
 
-      console.log(bindings);
-
       componentFn(bindings);
     }
   }
