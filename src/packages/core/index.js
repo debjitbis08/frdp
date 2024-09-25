@@ -17,9 +17,9 @@ export async function defineComponent(componentName, htmlUrl, componentFn) {
 
       const bindings = {};
 
-      const clickElements = shadow.querySelectorAll('[x-on\\:click]');
+      const clickElements = shadow.querySelectorAll('[r-on\\:click]');
       clickElements.forEach(clickElement => {
-        const observableName = `${clickElement.getAttribute('x-on:click')}$`;
+        const observableName = clickElement.getAttribute('r-on:click');
         bindings[observableName] = new Subject();
 
         clickElement.addEventListener('click', () => {
@@ -27,9 +27,9 @@ export async function defineComponent(componentName, htmlUrl, componentFn) {
         });
       });
 
-      const textElements = shadow.querySelectorAll('[x-text]');
+      const textElements = shadow.querySelectorAll('[r-text]');
       textElements.forEach(textElement => {
-        const observableName = `${textElement.getAttribute('x-text')}$`;
+        const observableName = textElement.getAttribute('r-text');
         bindings[observableName] = new ReplaySubject(1);
 
         bindings[observableName].subscribe(value => {
