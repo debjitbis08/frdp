@@ -1,0 +1,14 @@
+<template id="app-template">
+    <div>
+        <h1>My Task List for Today</h1>
+        <span>You have <span r-text="numberOfTasks$"></span> task(s) for today!</span>
+        <div r-text="taskList$">
+        </div>
+        <task-input r-on-out="newTaskAdd$:newTaskAdd$"></task-input>
+        <!--
+        <template x-for="task in taskList$">
+            <Task task="task" />
+        </template>
+        -->
+    </div>
+</template>

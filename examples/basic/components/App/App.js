@@ -17,10 +17,7 @@ function App(bindings) {
 }
 
 // Initialize the component
-const scriptUrl = import.meta.url;
-const htmlUrl = scriptUrl.replace('.js', '.html');
-
-defineComponent('main-app', htmlUrl, App);
+defineComponent('main-app', import.meta.url, App);
 
 // -------
 

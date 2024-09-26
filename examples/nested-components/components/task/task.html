@@ -1,0 +1,6 @@
+<template id="task-template">
+    <div>
+        <input type="checkbox" x-on:change="toggleTask" x-bind:checked="isComplete" />
+        <span x-text="taskName"></span>
+    </div>
+</template>
